@@ -1,7 +1,9 @@
 <template>
     <v-app>
         <v-app-bar app color="amber accent-4" dark elevation="10">
-            <v-app-bar-title>My Magazine</v-app-bar-title>
+            <v-app-bar-title>Personal Purpose Track: Sytse Walraven</v-app-bar-title>
+            <v-spacer/>
+            <v-btn outlined>text</v-btn>
             <template v-slot:extension>
                 <v-tabs 
                     v-model="tab" 
@@ -22,10 +24,7 @@
                     <v-tab-item
                         v-for="(item, index) in items" :key="index"
                     >
-                        <v-card class="ma-3"> 
-                            <v-card-title>{{ item.title }}</v-card-title>
-                            <v-card-text>{{ item.text }}</v-card-text>
-                        </v-card>
+                        <component :is="item.component" class="ma-auto" />
                     </v-tab-item>
                     </v-tabs-items>
             </v-container>
@@ -34,6 +33,11 @@
 </template>
 
 <script>
+
+import ExploringPassionAndPurpose from './pages/ExploringPassionAndPurpose.vue';
+import CreatingImpact from './pages/CreatingImpact.vue';
+import DevelopingKnowledgeAndSkills from './pages/DevelopingKnowledgeAndSkills.vue';
+import CreatingAFuturePlan from './pages/CreatingAFuturePlan.vue';
 
 export default {
     name: 'App',
@@ -48,21 +52,25 @@ export default {
                 title: 'Exploring Passion and Purpose',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.',
                 icon: 'mdi-heart',
+                component: ExploringPassionAndPurpose,
             },
             {
                 title: 'Creating Impact',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.',
                 icon: 'mdi-rocket',
+                component: CreatingImpact,
             },
             {
                 title: 'Developing Knowledge and Skills',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.',
                 icon: 'mdi-flask',
+                component: DevelopingKnowledgeAndSkills,
             },
             {
                 title: 'Creating a Future Plan',
                 text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.',
                 icon: 'mdi-calendar',
+                component: CreatingAFuturePlan,
             }
         ],
     }),
