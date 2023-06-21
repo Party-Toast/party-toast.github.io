@@ -3,7 +3,7 @@
         <v-col cols="7">
             <v-card class="mb-1">
                 <v-card-title>Exploring Passion and Purpose</v-card-title>
-                <v-card-subtitle class="pb-0">You can powerfully communicate your passion and indicate how it guided you to your personal purpose. Demonstrating valuable evidence is necessary to support this narrative and see the connection towards the developed product</v-card-subtitle>
+                <v-card-subtitle class="pb-0">You can powerfully communicate your passion and indicate how it guided you to your personal purpose. Demonstrating valuable evidence is necessary to support this narrative and see the connection towards the developed product.</v-card-subtitle>
                 <v-row>
                     <v-col>
                         <v-card-text>
@@ -20,11 +20,10 @@
         </v-col>
         <v-col cols="5">
             <v-card>
-                <v-card-text>
-                    <v-carousel v-model="model" hide-delimiters>
+                <v-card-text class="pb-0">
+                    <v-carousel v-model="selectedPicture" hide-delimiters>
                         <v-carousel-item
-                        v-for="(color, i) in colors"
-                        :key="i"
+                            v-for="(picture, index) in pictures" :key="index"
                         >
                         <v-sheet
                             height="100%"
@@ -35,15 +34,16 @@
                             align="center"
                             justify="center"
                             >
-                                <v-img :src="generateImage(i)"></v-img>
+                                <v-img :src="picture.src"></v-img>
                             </v-row>
                         </v-sheet>
                         </v-carousel-item>
                     </v-carousel>
                 </v-card-text>
                 <v-card-text>
-                    {{ model }}
+                    {{ pictures[selectedPicture].description }}
                 </v-card-text>
+                <v-img></v-img>
             </v-card>
         </v-col>
     </v-row>
@@ -56,19 +56,13 @@ export default {
     components: {
     },
     data: () => ({
-      model: 0,
-      colors: [
-        'primary',
-        'secondary',
-        'yellow darken-2',
-        'red',
-        'orange',
-      ],
+        selectedPicture: 0,
+        pictures: [
+            {
+                src: "/slides/1_exploring passion_and_purpose/cassette_deck_rear.jpeg",
+                description: 'The rear of the cassette deck which inspired me to start this project',
+            }
+        ],
     }),
-    methods: {
-        generateImage(id) {
-            return `https://picsum.photos/seed/${id}/300/300`
-        }
-    },
 }
 </script>

@@ -1,9 +1,23 @@
 <template>
     <v-app>
         <v-app-bar app color="amber accent-4" dark elevation="10">
-            <v-app-bar-title>Personal Purpose Track: Sytse Walraven</v-app-bar-title>
+            <v-app-bar-title><b>Personal Purpose Track</b> Sytse Walraven</v-app-bar-title>
             <v-spacer/>
-            <v-btn outlined>text</v-btn>
+            <v-btn 
+                @click="showRubric1 = true"
+                outlined 
+            >
+                <span>Rubric</span>
+                <v-icon class="ml-2 pr-0">mdi-numeric-1-circle-outline</v-icon>
+            </v-btn>
+            <v-btn 
+                @click="showRubric2 = true"
+                outlined 
+                class="ml-3"
+            >
+                <span>Rubric</span>
+                <v-icon class="ml-2 pr-0">mdi-numeric-2-circle-outline</v-icon>
+            </v-btn>
             <template v-slot:extension>
                 <v-tabs 
                     v-model="tab" 
@@ -29,6 +43,22 @@
                     </v-tabs-items>
             </v-container>
         </v-main>
+        <v-dialog
+            v-model="showRubric1"
+            width="50%"
+        >
+            <v-img 
+                src="./assets/PPI formative assessment 1.png"
+            />
+        </v-dialog>
+        <v-dialog
+            v-model="showRubric2"
+            width="50%"
+        >
+            <v-img 
+                src="./assets/PPI formative assessment 2.png"
+            />
+        </v-dialog>
     </v-app>
 </template>
 
@@ -46,29 +76,27 @@ export default {
     },
 
     data: () => ({
+        showRubric1: false,
+        showRubric2: false,
         tab: null,
         items: [
             {
                 title: 'Exploring Passion and Purpose',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.',
                 icon: 'mdi-heart',
                 component: ExploringPassionAndPurpose,
             },
             {
                 title: 'Creating Impact',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.',
-                icon: 'mdi-rocket',
+                icon: 'mdi-bullseye-arrow',
                 component: CreatingImpact,
             },
             {
                 title: 'Developing Knowledge and Skills',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.',
                 icon: 'mdi-flask',
                 component: DevelopingKnowledgeAndSkills,
             },
             {
                 title: 'Creating a Future Plan',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.',
                 icon: 'mdi-calendar',
                 component: CreatingAFuturePlan,
             }
