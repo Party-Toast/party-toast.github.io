@@ -10,7 +10,7 @@
                 <v-row>
                     <v-col>
                         <v-card-text>
-                            <v-icon>mdi-cassette</v-icon>
+                            <v-icon color="amber darken-3">mdi-cassette</v-icon>
                             My passion that inspired this project is my love for vintage audio equipment, especially old reel-to-reel recorders, turn tables, and cassette decks.
                             I've already had some experience with repairing and restoring these devices, but I wanted to take it a step further and create something new.
                             When I was cleaning out my grandfather's house, I found this old cassette deck with a weird remote control port that I had never seen before.
@@ -19,7 +19,7 @@
                             After asking for and receiving help on a <a href="https://www.tapeheads.net/threads/diy-akai-remote-version-2-0.99205/#post-775683806">forum about analog tape</a>, 
                             I made a first simple paper prototype which worked surprisingly well.
                             <br><br>
-                            <v-icon>mdi-tools</v-icon>
+                            <v-icon color="amber darken-2">mdi-tools</v-icon>
                             Since there are a lot of tools at Pulsed that I don't have at home, I decided to service the cassette deck a little.
                             I cleaned the heads and tape path with isopropyl alcohol and replaced some of the broken lights behind the control buttons.
                             After doing some tests and calibration, the cassette deck was ready for the rest of my project.

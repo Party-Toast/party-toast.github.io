@@ -7,13 +7,13 @@
                 <v-row>
                     <v-col>
                         <v-card-text>
-                            <v-icon>mdi-account</v-icon>
+                            <v-icon color="amber darken-3">mdi-account</v-icon>
                             The main impact of this project is on a personal level. 
                             The work I did was very close to my hobbies and studies, as I was working with vintage audio equipment and intertwined it with my programming skills.
                             I wanted to make this project for myself to show that I'm capable of being somewhat of a maker that follows his own passion and purpose instead of following an assignment from school or a company.
                             Even though tape recording is long dead for any practical use, I like the feeling of recording on tape and I wanted to make it more approachable for myself and others.
                             <br><br>
-                            <v-icon>mdi-account-group</v-icon>
+                            <v-icon color="amber darken-2">mdi-account-group</v-icon>
                             My end product takes an old piece of audio equipment and brings it into the modern age by applying wireless technologies and simplifying the setup process.
                             Although I love using vintage tape recorders, the hassle of just setting them up, connecting the right wires, and preparing for recording is an enourmous hassle.
                             With my product, you just plug it in to power, connect it to the cassette deck with the 11 pin connector and audio jacks, and you're ready to go.
