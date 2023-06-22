@@ -22,17 +22,17 @@
                             In the end, the ESP32 is used to control the relay, handle the Bluetooth audio connection, control the DAC (digital to analog converter), and run the display.
                             The Raspberry Pi Nano is used to host the web interface that sends commands to the ESP32 which are sent to the cassette deck through the relay. 
                             <br><br>
+                            <v-icon>mdi-soldering-iron</v-icon>
+                            Soldering is something I've done in the past, but due to my unsteady hands I've never been very good at it. 
+                            The proper soldering irons and soldering stations in the makerspace made it a lot easier for me to solder to PCB's, connectors, and wires.
+                            I also learned how to use a multimeter and oscilloscope to troubleshoot my circuitry, which was very useful when I was trying to figure out where a cable break was located.
+                            <br><br>
                             <v-icon>mdi-laser-pointer</v-icon>
                             In order to create the wooden cover for the controller box, I learned how to use the laser cutter in the makerspace.
                             By learning how to use Inkscape I was able to recreate the look of the cassette deck case in a smaller form factor. 
                             <br>
                             I also wanted to recreate the iconic brushed aluminum look of the cassette deck.
                             After I translated my design from Inkscape to Fusion 360, I received help from the students at Nexus to laser cut aluminum for the face plate.                             
-                            <br><br>
-                            <v-icon>mdi-soldering-iron</v-icon>
-                            Soldering is something I've done in the past, but due to my unsteady hands I've never been very good at it. 
-                            The proper soldering irons and soldering stations in the makerspace made it a lot easier for me to solder to PCB's, connectors, and wires.
-                            I also learned how to use a multimeter and oscilloscope to troubleshoot my circuitry, which was very useful when I was trying to figure out where my cable break was located.
                             <br><br>
                             <v-icon>mdi-hand-saw</v-icon>
                             Although I already had some experience with woodworking, this project required me learn a new skill: veneering.
@@ -47,112 +47,101 @@
             </v-card>
         </v-col>
         <v-col cols="5">
-            <v-card>
-                <v-card-text class="pb-0">
-                    <v-carousel v-model="selectedPicture" hide-delimiters>
-                        <v-carousel-item
-                            v-for="(picture, index) in pictures" :key="index"
-                        >
-                        <v-sheet
-                            height="100%"
-                            tile
-                        >
-                            <v-row
-                            class="fill-height"
-                            align="center"
-                            justify="center"
-                            >
-                                <v-img :src="picture.src" contain max-height="550"></v-img>
-                            </v-row>
-                        </v-sheet>
-                        </v-carousel-item>
-                    </v-carousel>
-                </v-card-text>
-                <v-card-text>
-                    {{ pictures[selectedPicture].description }}
-                </v-card-text>
-            </v-card>
+            <PictureCarousel :pictures="pictures"/>
         </v-col>
     </v-row>
     
 </template>
 
 <script>
+import PictureCarousel from '@/components/PictureCarousel.vue'
 
 export default {
     components: {
+        PictureCarousel
     },
     data: () => ({
-        selectedPicture: 0,
         pictures: [
             {
-                src: 'https://picsum.photos/seed/1/300/300',
-                description: 'Image 1',
+                src: "/slides/3_developing_knowledge_and_skills/3d_printing_1.jpeg",
+                description: "Three prototypes of the 11 pin connector. The black one was too small, the white one didn't have enough space for the pins, the yellow one was exactly what I needed.",
             },
             {
-                src: 'https://picsum.photos/seed/2/300/300',
-                description: 'Image 2',
+                src: "/slides/3_developing_knowledge_and_skills/3d_printing_2.jpeg",
+                description: "Three prototypes of the 11 pin connector. The black one was too small, the white one didn't have enough space for the pins, the yellow one was exactly what I needed.",
             },
             {
-                src: 'https://picsum.photos/seed/3/300/300',
-                description: 'Image 3',
+                src: "/slides/3_developing_knowledge_and_skills/3d_printing_3.jpeg",
+                description: "Sanding down the first prototype of the controller box to fix some tolerance issues.",
             },
             {
-                src: 'https://picsum.photos/seed/4/300/300',
-                description: 'Image 4',
+                src: "/slides/3_developing_knowledge_and_skills/microcontroller_3.jpeg",
+                description: "Controlling the relay with the ESP32."
             },
             {
-                src: 'https://picsum.photos/seed/5/300/300',
-                description: 'Image 5',
+                src: "/slides/3_developing_knowledge_and_skills/microcontroller_1.jpeg",
+                description: "Testing the Bluetooth audio connection with the ESP32 using its internal DAC (digital to analog converter)."
             },
             {
-                src: 'https://picsum.photos/seed/6/300/300',
-                description: 'Image 6',
+                src: "/slides/3_developing_knowledge_and_skills/microcontroller_2.jpeg",
+                description: "Testing the Bluetooth audio connection with the ESP32 using an external DAC (digital to analog converter) for improved audio quality."
             },
             {
-                src: 'https://picsum.photos/seed/7/300/300',
-                description: 'Image 7',
+                src: "/slides/3_developing_knowledge_and_skills/microcontroller_4.jpeg",
+                description: "Programming the the display that shows the track and artist you are recording. This data is sent from the connected Bluetooth device and processed by the ESP32."
             },
             {
-                src: 'https://picsum.photos/seed/8/300/300',
-                description: 'Image 8',
+                src: "/slides/3_developing_knowledge_and_skills/soldering_1.jpeg",
+                description: "Soldering the buttons together on the paper prototype."
             },
             {
-                src: 'https://picsum.photos/seed/9/300/300',
-                description: 'Image 9',
+                src: "/slides/3_developing_knowledge_and_skills/soldering_2.jpeg",
+                description: "Testing the connections of the paper prototype with a multimeter."
             },
             {
-                src: 'https://picsum.photos/seed/10/300/300',
-                description: 'Image 10',
+                src: "/slides/3_developing_knowledge_and_skills/soldering_3.jpeg",
+                description: "Testing the quality of the internal DAC (digital to analog converter) of the ESP32 using an oscilloscope."
             },
             {
-                src: 'https://picsum.photos/seed/11/300/300',
-                description: 'Image 11',
+                src: "/slides/3_developing_knowledge_and_skills/soldering_4.jpeg",
+                description: "Soldering audio jacks to the external DAC (digital to analog converter) PCB."
             },
             {
-                src: 'https://picsum.photos/seed/12/300/300',
-                description: 'Image 12',
+                src: "/slides/3_developing_knowledge_and_skills/soldering_5.jpeg",
+                description: "Soldering audio jacks to the external DAC (digital to analog converter) PCB."
             },
             {
-                src: 'https://picsum.photos/seed/13/300/300',
-                description: 'Image 13',
+                src: "/slides/3_developing_knowledge_and_skills/laser_cutting_1.jpeg",
+                description: "The laser cut MDF cover pieces, fresh from the laser cutter."
             },
             {
-                src: 'https://picsum.photos/seed/14/300/300',
-                description: 'Image 14',
+                src: "/slides/3_developing_knowledge_and_skills/laser_cutting_2.jpeg",
+                description: "The assembled laser cut wooden cover. The wood glue was still drying."
             },
             {
-                src: 'https://picsum.photos/seed/15/300/300',
-                description: 'Image 15',
+                src: "/slides/3_developing_knowledge_and_skills/laser_cutting_3.jpeg",
+                description: "The wooden cover after sanding."
             },
             {
-                src: 'https://picsum.photos/seed/16/300/300',
-                description: 'Image 16',
+                src: "/slides/3_developing_knowledge_and_skills/woodworking_1.jpeg",
+                description: "Cutting the veneer to size."
             },
             {
-                src: 'https://picsum.photos/seed/17/300/300',
-                description: 'Image 17',
-            }      
+                src: "/slides/3_developing_knowledge_and_skills/woodworking_2.jpeg",
+                description: "Applying the veneer to the wooden cover."
+            },
+            {
+                src: "/slides/3_developing_knowledge_and_skills/woodworking_3.jpeg",
+                description: "The wooden cover before sanding and treating with linseed oil (ventilation slits not yet cut)."
+            },
+            {
+                src: "/slides/3_developing_knowledge_and_skills/woodworking_4.jpeg",
+                description: "The wooden cover after sanding while the linseed oil was drying (ventilation slits were cut)."
+            },
+            {
+                src: "/slides/3_developing_knowledge_and_skills/woodworking_5.jpeg",
+                description: "The woorden cover after the initial treatment. The blemishes from the wood glue are still visible around the edges on the top."
+            },
         ],
     }),
 }

@@ -1,31 +1,7 @@
 <template>
     <v-row>
         <v-col cols="5">
-            <v-card>
-                <v-card-text class="pb-0">
-                    <v-carousel v-model="selectedPicture" hide-delimiters>
-                        <v-carousel-item
-                            v-for="(picture, index) in pictures" :key="index"
-                        >
-                        <v-sheet
-                            height="100%"
-                            tile
-                        >
-                            <v-row
-                                class="fill-height"
-                                align="center"
-                                justify="center"
-                            >
-                                <v-img :src="picture.src"></v-img>
-                            </v-row>
-                        </v-sheet>
-                        </v-carousel-item>
-                    </v-carousel>
-                </v-card-text>
-                <v-card-text>
-                    {{ pictures[selectedPicture].description }}
-                </v-card-text>
-            </v-card>
+            <PictureCarousel :pictures="pictures" />
         </v-col>
         <v-col cols="7">
             <v-card class="mb-1">
@@ -38,7 +14,7 @@
                             In the future, I want to do a lot more with my three main interests of programming, audio/HiFi, and makership. 
                             The insights I've gained during this semester will likely prove vital in my future as I will have more time and resources to pursue my interests.
                             <br>
-                            I've already got some plans for future projects, like a multi-room audio system for me and my housemates, intergrate Spotify connect into a vintage HiFi system, and audio visualization using LED strips and electroluminescent wire to create audio-visual experiences.
+                            I've already got some plans for future projects, like a multi-room audio system for me and my housemates, intergrate Spotify connect into a vintage HiFi system, and audio visualization using LEDs and electroluminescent wire to create audio-visual experiences.
                             <br><br>
                             <v-icon>mdi-share-variant</v-icon>
                             Although I did not have any time left after completing my personal purpose project, I would like to share my project with fellow makers and audiophiles in the future.
@@ -59,81 +35,30 @@
 </template>
 
 <script>
+import PictureCarousel from '../components/PictureCarousel.vue';
 
 export default {
     components: {
+        PictureCarousel,
     },
     data: () => ({
-        selectedPicture: 0,
         pictures: [
             {
-                src: 'https://picsum.photos/seed/1/300/300',
-                description: 'Image 1',
-            },
+                src: "/slides/4_creating_a_future_plan/multi_audio_room.jpeg",
+                description: "An example of a multi-room wireless audio system, powered by Raspberry Pi's. The system would allow you to play music in multiple rooms at the same time, or play different music in each room.",
+            },  
             {
-                src: 'https://picsum.photos/seed/2/300/300',
-                description: 'Image 2',
-            },
+                src: "/slides/4_creating_a_future_plan/audio_visualization.jpeg",
+                description: "Examples of audio visualization using LEDs, making use of a Raspberry Pi or other microcontroller to process the audio signal and control the lights.",
+            },  
             {
-                src: 'https://picsum.photos/seed/3/300/300',
-                description: 'Image 3',
-            },
+                src: "/slides/4_creating_a_future_plan/el_wire.jpeg",
+                description: "Electroluminescent wire which I would like to use for audio visualization. It is flexible and can be cut to length, making it easy to use for this purpose.",
+            },  
             {
-                src: 'https://picsum.photos/seed/4/300/300',
-                description: 'Image 4',
-            },
-            {
-                src: 'https://picsum.photos/seed/5/300/300',
-                description: 'Image 5',
-            },
-            {
-                src: 'https://picsum.photos/seed/6/300/300',
-                description: 'Image 6',
-            },
-            {
-                src: 'https://picsum.photos/seed/7/300/300',
-                description: 'Image 7',
-            },
-            {
-                src: 'https://picsum.photos/seed/8/300/300',
-                description: 'Image 8',
-            },
-            {
-                src: 'https://picsum.photos/seed/9/300/300',
-                description: 'Image 9',
-            },
-            {
-                src: 'https://picsum.photos/seed/10/300/300',
-                description: 'Image 10',
-            },
-            {
-                src: 'https://picsum.photos/seed/11/300/300',
-                description: 'Image 11',
-            },
-            {
-                src: 'https://picsum.photos/seed/12/300/300',
-                description: 'Image 12',
-            },
-            {
-                src: 'https://picsum.photos/seed/13/300/300',
-                description: 'Image 13',
-            },
-            {
-                src: 'https://picsum.photos/seed/14/300/300',
-                description: 'Image 14',
-            },
-            {
-                src: 'https://picsum.photos/seed/15/300/300',
-                description: 'Image 15',
-            },
-            {
-                src: 'https://picsum.photos/seed/16/300/300',
-                description: 'Image 16',
-            },
-            {
-                src: 'https://picsum.photos/seed/17/300/300',
-                description: 'Image 17',
-            }      
+                src: "/slides/4_creating_a_future_plan/sony_remote.jpeg",
+                description: "A Sony remote control for cassette decks and reel-to-reel recorders. The remote uses the same 11 pin connector as my controller but is wired differently.",
+            },  
         ],
     }),
 }

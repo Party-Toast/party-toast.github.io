@@ -1,31 +1,7 @@
 <template>
     <v-row>
         <v-col cols="5">
-            <v-card>
-                <v-card-text class="pb-0">
-                    <v-carousel v-model="selectedPicture" hide-delimiters>
-                        <v-carousel-item
-                            v-for="(picture, index) in pictures" :key="index"
-                        >
-                        <v-sheet
-                            height="100%"
-                            tile
-                        >
-                            <v-row
-                                class="fill-height"
-                                align="center"
-                                justify="center"
-                            >
-                                <v-img :src="picture.src" contain max-height="550"></v-img>
-                            </v-row>
-                        </v-sheet>
-                        </v-carousel-item>
-                    </v-carousel>
-                </v-card-text>
-                <v-card-text>
-                    {{ pictures[selectedPicture].description }}
-                </v-card-text>
-            </v-card>
+            <PictureCarousel :pictures="pictures"/>
         </v-col>
         <v-col cols="7">
             <v-card class="mb-1">
@@ -49,7 +25,6 @@
                             For example, I used it to record a tape with Stef for his escape room even tho he is not familiar with vintage audio recording at all.
                             Furthermore, I can see this being a neat product for people who want to record their own music on tape for personal use or as novelty gifts. 
                             I've contact a friend who's studying to become an audio engineer and he was very interested in the product.
-
                         </v-card-text>
                     </v-col>
                 </v-row>
@@ -60,12 +35,13 @@
 </template>
 
 <script>
+import PictureCarousel from '@/components/PictureCarousel.vue';
 
 export default {
     components: {
+        PictureCarousel,
     },
     data: () => ({
-        selectedPicture: 0,
         pictures: [
             {
                 src: 'https://picsum.photos/seed/1/300/300',

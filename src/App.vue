@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <v-app-bar app color="amber accent-4" dark elevation="10">
+        <v-app-bar app dark elevation="16" style="background: linear-gradient(rgb(255, 171, 0), rgb(144, 84, 255))">
             <v-app-bar-title><b>Personal Purpose Track</b> Sytse Walraven</v-app-bar-title>
             <v-spacer/>
             <v-btn 
@@ -33,8 +33,8 @@
         </v-app-bar>
 
         <v-main>
-            <v-container fluid>
-                <v-tabs-items v-model="tab">
+            <v-container fluid style="background: linear-gradient(rgba(144, 84, 255, 0.5), rgb(250, 250, 250))">
+                <v-tabs-items v-model="tab" style="background: rgba(0, 0, 0, 0)">
                     <v-tab-item
                         v-for="(item, index) in items" :key="index"
                     >
@@ -71,10 +71,9 @@ import CreatingAFuturePlan from './pages/CreatingAFuturePlan.vue';
 
 export default {
     name: 'App',
-
-    components: {
+    created() {
+        document.title = 'My Magazine';
     },
-
     data: () => ({
         showRubric1: false,
         showRubric2: false,
