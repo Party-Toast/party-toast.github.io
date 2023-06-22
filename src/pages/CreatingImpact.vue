@@ -12,11 +12,11 @@
                             tile
                         >
                             <v-row
-                            class="fill-height"
-                            align="center"
-                            justify="center"
+                                class="fill-height"
+                                align="center"
+                                justify="center"
                             >
-                                <v-img :src="picture.src"></v-img>
+                                <v-img :src="picture.src" contain max-height="550"></v-img>
                             </v-row>
                         </v-sheet>
                         </v-carousel-item>
@@ -34,12 +34,22 @@
                 <v-row>
                     <v-col>
                         <v-card-text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.
-                        </v-card-text>
-                    </v-col>
-                    <v-col>
-                        <v-card-text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae aliquam nisl nisl vitae nisl.
+                            <v-icon>mdi-account</v-icon>
+                            The main impact of this project is on a personal level. 
+                            The work I did was very close to my hobbies and studies, as I was working with vintage audio equipment and intertwined it with my programming skills.
+                            I wanted to make this project for myself to show that I'm capable of being somewhat of a maker that follows his own passion and purpose instead of following an assignment from school or a company.
+                            Even though tape recording is long dead for any practical use, I like the feeling of recording on tape and I wanted to make it more approachable for myself and others.
+                            <br><br>
+                            <v-icon>mdi-account-group</v-icon>
+                            My end product takes an old piece of audio equipment and brings it into the modern age by applying wireless technologies and simplifying the setup process.
+                            Although I love using vintage tape recorders, the hassle of just setting them up, connecting the right wires, and preparing for recording is an enourmous hassle.
+                            With my product, you just plug it in to power, connect it to the cassette deck with the 11 pin connector and audio jacks, and you're ready to go.
+                            This should make recording audio a lot more approachable to people who are not familiar with the process of recording audio. 
+                            <br>
+                            For example, I used it to record a tape with Stef for his escape room even tho he is not familiar with vintage audio recording at all.
+                            Furthermore, I can see this being a neat product for people who want to record their own music on tape for personal use or as novelty gifts. 
+                            I've contact a friend who's studying to become an audio engineer and he was very interested in the product.
+
                         </v-card-text>
                     </v-col>
                 </v-row>
