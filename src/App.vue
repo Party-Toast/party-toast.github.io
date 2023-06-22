@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <v-app-bar app dark elevation="16" style="background: linear-gradient(rgb(255, 171, 0), rgb(144, 84, 255))">
+        <v-app-bar app dark elevation="5" style="background: linear-gradient(rgb(255, 171, 0), rgb(144, 84, 255))">
             <v-app-bar-title><b>Personal Purpose Track</b> Sytse Walraven</v-app-bar-title>
             <v-spacer/>
             <v-btn 

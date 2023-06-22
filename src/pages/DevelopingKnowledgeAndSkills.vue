@@ -1,5 +1,8 @@
 <template>
     <v-row>
+        <v-col cols="5">
+            <PictureCarousel :pictures="pictures"/>
+        </v-col>
         <v-col cols="7">
             <v-card class="mb-1">
                 <v-card-title>Developing Knowledge and Skills</v-card-title>
@@ -45,9 +48,6 @@
                     </v-col>
                 </v-row>
             </v-card>
-        </v-col>
-        <v-col cols="5">
-            <PictureCarousel :pictures="pictures"/>
         </v-col>
     </v-row>
     

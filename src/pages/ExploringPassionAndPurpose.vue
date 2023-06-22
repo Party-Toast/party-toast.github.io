@@ -1,6 +1,9 @@
 <template>
     <v-row>
-        <v-col cols="6">
+        <v-col cols="5">
+            <PictureCarousel :pictures="pictures"/>
+        </v-col>
+        <v-col cols="7">
             <v-card class="mb-1">
                 <v-card-title>Exploring Passion and Purpose</v-card-title>
                 <v-card-subtitle class="pb-0">You can powerfully communicate your passion and indicate how it guided you to your personal purpose. Demonstrating valuable evidence is necessary to support this narrative and see the connection towards the developed product.</v-card-subtitle>
@@ -24,9 +27,6 @@
                     </v-col>
                 </v-row>
             </v-card>
-        </v-col>
-        <v-col cols="6">
-            <PictureCarousel :pictures="pictures"/>
         </v-col>
     </v-row>
     
