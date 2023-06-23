@@ -123,6 +123,10 @@ export default {
                 description: "The wooden cover after sanding."
             },
             {
+                src: "/slides/3_developing_knowledge_and_skills/laser_cutting_4.jpeg",
+                description: "The laser cut aluminium face plate and its wooden test piece."
+            },
+            {
                 src: "/slides/3_developing_knowledge_and_skills/woodworking_1.jpeg",
                 description: "Cutting the veneer to size."
             },
