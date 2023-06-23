@@ -11,7 +11,7 @@
                     <v-col>
                         <v-card-text>
                             <v-icon color="amber darken-3">mdi-printer-3d</v-icon> 
-                            This minor was the first time I worked with 3D modelling and printing. 
+                            This minor was the first time I worked with 3D modeling and printing. 
                             I learned how to use Fusion 360 to create 3D models for my 11 pin connector and project box.
                             The instructions in the makerspace taught me how to use the 3D printers to print them.
                             Being able to design and print the connector itself saved me a lot of time and money, as that part is only manufactured in the USA and pricing was insane.
@@ -38,7 +38,7 @@
                             After I translated my design from Inkscape to Fusion 360, I received help from the students at Nexus to laser cut aluminum for the face plate.                             
                             <br><br>
                             <v-icon color="amber lighten-1">mdi-hand-saw</v-icon>
-                            Although I already had some experience with woodworking, this project required me learn a new skill: veneering.
+                            Although I already had some experience with woodworking, this project required me to learn a new skill: veneering.
                             Compared to the more traditional woodworking I had done before, veneering is way more delicate and requires a lot of patience.
                             By following some tutorials online, I was able to veneer the wooden cover for the controller box.
                             In a hurry, I used wood glue to attach the veneer to the wood, which spilled out and dried on the veneer.

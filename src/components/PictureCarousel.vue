@@ -19,7 +19,11 @@
                         align="center"
                         justify="center"
                     >
-                        <v-img :src="picture.src" contain max-height="550"></v-img>
+                        <v-img 
+                            :src="picture.src" 
+                            contain 
+                            max-height="550"
+                        />
                     </v-row>
                 </v-sheet>
                 </v-carousel-item>
